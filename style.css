@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+   background-color:rgb(177, 156, 156);
+   color: white;
+}
+header{
+    background-color: black;
+    width: 100vw;
+    height: 6rem;
+    padding: 0 3rem;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-menu .nav-link{
+    position: relative;
+}
+.nav-menu .nav-link a{
+    padding: 0 2rem;
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+    transition: color 2.4s ease;
+}
+.nav-menu .nav-link a:hover,
+.nav-menu .nav-link a.active{
+    color: blue;
+}
+.nav-menu .nav-link a.active::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    bottom: -4px;
+    left: 25px;
+    position: absolute;
+    background-color: blue;
+    animation: slide 3s infinite 3s;
+}
+@keyframes slide{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media screen and (max-width:768px){
+  header{
+      width: 30vw;
+      height: 100vh;
+      padding: 0 3rem;
+      margin-left: 1rem;
+  }
+  .navbar{
+      flex-direction: column;
+      justify-content: none;
+  }
+  .nav-menu{
+      flex-direction: column;
+      justify-content: space-around;
+      margin-bottom: 2rem;
+  }
+  .nav-link{
+      margin: 4rem 0;
+  }
+}
